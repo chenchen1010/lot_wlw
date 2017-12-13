@@ -45,16 +45,17 @@ public class MainActivity extends AppCompatActivity {
             num2[i] = Float.parseFloat(a);
             num3[i] = (int) (40 + Math.random()*10-5);
             num4[i] = (int) (8 + Math.random()*4-2);
-         //   num5[i] = (float) (15 + Math.random()*1-0.5);
+            num5[i] = (float) (15 + Math.random()*1-0.5);
             num5[i] = (float) (25);
             String b = new DecimalFormat("###,###,###.#").format(num5[i]);
             num5[i] = Float.parseFloat(b);
         }
 
-        //静止版本
-        String time = sDateFormat2.format(new java.util.Date());
-        shijian.setText("时间 "+time);
-        wendu.setText("温度 25 ℃ ");
+//        //静止版本
+//        String time = sDateFormat2.format(new java.util.Date());
+//        shijian.setText("时间 "+time);
+//        wendu.setText("温度 ");
+
         //延迟3s再执行显示
         new Thread(new Runnable()
         {
@@ -74,13 +75,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //do something
-//                String time = sDateFormat2.format(new java.util.Date());
-//                shijian.setText("时间 "+time);
-//                wendu.setText("温度 "+num5[j]);
-//                tv1.setText(""+num1[j]);
-//                tv2.setText(""+num2[j]);
-//                tv3.setText(""+num3[j]);
-//                tv4.setText(""+num4[j]);
+                String time = sDateFormat2.format(new java.util.Date());
+                shijian.setText("时间 "+time);
+                wendu.setText("温度 "+num5[j]+"℃");
+                tv1.setText(""+num1[j]);
+                tv2.setText(""+num2[j]);
+                tv3.setText(""+num3[j]);
+                tv4.setText(""+num4[j]);
                 j++;
                 if(j==20)
                     j = 0;
